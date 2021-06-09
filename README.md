@@ -1,4 +1,4 @@
-# Geradora de Certficados PDF'S
+# Geradora de Certificados em PDF
 Biblioteca simples feita com o ejs com o instuito de gerar certificados em pdf.
 
 ## Para instalar:
