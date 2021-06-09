@@ -3,7 +3,7 @@ const ejs = require('ejs');
 let html;
 let initialDate = new Date();
 
-ejs.renderFile('./base.ejs', {}, (err, data) => {
+ejs.renderFile('./base.ejs', {name: 'Niedson Emanoel Almeida Brito'}, (err, data) => {
     if (err) {
         console.log(err)
     } else {

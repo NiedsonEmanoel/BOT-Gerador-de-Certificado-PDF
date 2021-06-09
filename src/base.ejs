@@ -14,6 +14,7 @@
     }
 
     .textDiv {
+        word-break: break-word;
         position: absolute;
         top: 0;
         left: 0;
@@ -26,11 +27,18 @@
 <body>
     <div class="divLeft">
         <!--3300 x 2300-->
-        <img id="photo" src="https://i.imgur.com/KkzOC9e.jpg'">
+        <img id="photo" src="https://raw.githubusercontent.com/NiedsonEmanoel/BOT-Gerador-de-Certificado-PDF/main/src/imagem.jpg">
 
         <div class="textDiv">
-            <h1 style="padding-left: 10.5cm; padding-top: 2cm; font-size: 48px;">CERTIFICADO</h1>
-            <h3 style="padding-left: 11.55cm;">Confiro o presente certificado a</h3>
+            <h1 style="text-align: center; padding-top: 2cm; font-size: 48px;">CERTIFICADO</h1>
+            <h3 style="text-align: center;">Confiro o presente certificado a</h3>
+            <h1 style="padding-left: 3.2cm; font-size: 40px; padding-right: 3cm; text-align: center;"><%= name %></h1>
+            <p
+            style="padding-top: 0.3cm; padding-left: 3.2cm; padding-right: 3cm; font-size: 18px; text-align: justify;"> 
+                 Por assistir a ${evento}
+                <b>${NOMEEVENTO NOME EVENTO NOME EVENTO NOME EVENTO NOME COMPO EVENTO} NOME CVENTO</b> 
+                com o total de ${x horas e y minutos}. ${o evento foi na } ${LOCAL LOCAL LOCAL LOCAL}
+            </p>
         </div>
     </div>
 </body>
