@@ -1,47 +1,47 @@
-const gerarCertificado = async (title, subtitle, name, initialDescription, boldDescription, finalDescription, entity, entityCredential) => {
-    const pdf = require('html-pdf');
-    const ejs = require('ejs');
-    let html;
+const gerarCertificado = (title, subtitle, name, initialDescription,
+    boldDescription,
+    finalDescription,
+    entity,
+    entityCredential) => {
+    return new Promise(async (resolve, reject) => {
+        const { promisify } = require('util')
+        const pdf = require('html-pdf');
+        const uuid = require('uuid').v4;
+        let html;
 
-    ejs.renderFile('./base.ejs', {
-        title,
-        subtitle,
-        name,
-        initialDescription,
-        boldDescription,
-        finalDescription,
-        entity,
-        entityCredential
-    }, (err, data) => {
-        if (err) {
-            console.log(err)
-        } else {
-            html = data
-        }
-    })
+        const renderFile = promisify(require('ejs').renderFile);
+
+        await renderFile('./base.ejs', {
+            title,
+            subtitle,
+            name,
+            initialDescription,
+            boldDescription,
+            finalDescription,
+            entity,
+            entityCredential,
+        }).then((e) => { html = e }).catch((e) => reject(e))
 
 
-    pdf.create(html, {
-        format: 'A4',
-        orientation: 'landscape',
-    }).toFile('./certificate.pdf', (err, res) => {
-        if (err) {
-            console.error(err)
-        } else {
-            return res.filename;
-        }
+        pdf.create(html, {
+            format: 'A4',
+            orientation: 'landscape',
+        }).toFile(`certificate ${uuid()}.pdf`, (err, res) => {
+            if (err) {
+                reject(err)
+            } else {
+                resolve(res.filename);
+            }
+        })
     })
 }
 
 (async () => {
-    await gerarCertificado(
-        "CERTIFICADO",
-        "Confiro o presente certificado a",
-        'Niedson Emanoel Almeida Brito',
-        "Por assistir a palestra",
-        "Destruindo a Skynet: tetagshjkshskgsdsdg",
-        "com total de 1 hora e 30 minutos. A palestra foi realizada no evento kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.",
-        "Niedson Emanoel",
-        "Programador sem nada pra fazer de madruga."
-    )
+    try {
+       let s = await gerarCertificado('CERTIFICADO', 'Confiro o presente certificado a', 'Niedson Emanoel', 'Por assistir a palestra', 'Growth hacker, uma nova forma de ver o instagram', 'com duração de 1 hora e 30 minutos no evendo the tdcbs news . net', 'Niedson Emanoel', 'Dev Masye')
+      //  .then
+        console.log(s)
+    } catch (e) {
+
+    }
 })();
