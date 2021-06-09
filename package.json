@@ -1,0 +1,23 @@
+{
+  "name": "bot-gerador-de-certificado-pdf",
+  "version": "1.0.0",
+  "description": "Bot gerador de certificados em PDFs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NiedsonEmanoel/BOT-Gerador-de-Certificado-PDF.git"
+  },
+  "author": "Niedson Emanoel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NiedsonEmanoel/BOT-Gerador-de-Certificado-PDF/issues"
+  },
+  "homepage": "https://github.com/NiedsonEmanoel/BOT-Gerador-de-Certificado-PDF#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "html-pdf": "^3.0.1"
+  }
+}

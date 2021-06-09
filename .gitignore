@@ -66,6 +66,8 @@ typings/
 # nuxt.js build output
 .nuxt
 
+.pdf
+
 # vuepress build output
 .vuepress/dist
 
