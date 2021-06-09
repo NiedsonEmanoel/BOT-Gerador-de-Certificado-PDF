@@ -1,10 +1,10 @@
 {
   "name": "lib-geradora-de-certificado-pdf",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Biblioteca geradora de certificados em PDFs",
   "main": "src/index.js",
   "scripts": {
-    "test": "npm src/test.js"
+    "test": "npm test.js"
   },
   "repository": {
     "type": "git",
