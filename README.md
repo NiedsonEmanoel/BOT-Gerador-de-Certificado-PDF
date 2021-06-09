@@ -10,9 +10,10 @@ npm i lib-geradora-de-certificado-pdf
 ## O código abaixo gera o seguinte certificado:
 ```
 const certGenerator = require('lib-geradora-de-certificado-pdf');
+const path = require('path');
 
 (async () => {
-    await certGenerator(
+    let dirCert = await certGenerator(
         'CERTIFICADO',
         'Confiro o presente certificado a',
         'Niedson Emanoel',
@@ -21,8 +22,10 @@ const certGenerator = require('lib-geradora-de-certificado-pdf');
         'As sugestões da comunidade são muito bem-vindas e sintam-se a vontade.',
         'Niedson Emanoel',
         'Programador Jr.',
-        __dirname, 'cert.pdf'
+        path.join(__dirname, 'cert.pdf')
     )
+
+    console.log('Diretório:', dirCert)
 })()
 ```
 
