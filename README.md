@@ -23,9 +23,9 @@ const path = require('path');
         'Niedson Emanoel',
         'Programador Jr.',
         path.join(__dirname, 'cert.pdf')
-        )
+    )
 
-        console.log('Diretório:', dirCert)
+    console.log('Diretório:', dirCert)
 })()
 ```
 
