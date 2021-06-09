@@ -1,1 +1,1 @@
-console.log('versões futuras')
+console.log('versões futuras.')
